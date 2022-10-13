@@ -1,0 +1,101 @@
+[[define "result"]]
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>갈림길</title>
+    <link rel="stylesheet" href="/assets/css/main2.css">
+    <link rel="stylesheet" href="/assets/css/voteResult.css">
+
+    <!-- Vue.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.min.js"></script>
+</head>
+
+<body>
+
+    <div class="nav-header">
+        <a id="a1" href="/candidate/main">HR 대표</a>
+        <a id="a2" href="/candidate/sub">품격위원</a>
+        <a id="a3" href="/applyCandidate">후보자 등록/수정</a>
+        <a id="a4" class="white-border" href="/result">투표결과</a>
+        <a id="a5">[[index . "groupName"]]</a>
+        <a id="a6" href="/myInfo"><img src="/assets/img/silh_white.png" alt=""></a>
+    </div>
+    <div class="wrapper">
+        <div class="box1">
+            <p>당선</p>
+            <div class="item1">
+                <div class="first">
+                    <img src="/assets/file/3-S8_181094.png" style="width: 130px; height:auto;margin-left:30%;" alt="">
+                    <h1>[[index . "mainWinnerName"]]</h1>
+                    <h2>HR 대표</h2>
+                    <h2>[[index . "mainWinnerOneLine"]]</h2>
+                </div>
+                <div class="second">
+                    <img src="/assets/file/3-S8_181094.png" style="width: 130px; height:auto;margin-left:30%;" alt="">
+                    <h1>[[index . "subWinnerName"]]</h1>
+                    <h2>품격위원</h2>
+                    <h2>[[index . "subWinnerOneLine"]]</h2>
+                </div>
+            </div>
+        </div>
+        <div class="box2">
+            <p>득표수</p>
+            <div id="candidates" class="result">
+                <div class="flex-item1">
+                    <div style="font-size:25px;">HR 대표</div>
+                    <div class="HRcandidates" v-for="candidate in mainCandidates">
+                        <div class="HR-item">
+                            <div style="margin-left:10px;">{{$index + 1}}. {{candidate.studentName}}
+                            </div>
+                            <div>{{candidate.vote}}표</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-item2">
+                    <div style="font-size:25px; margin-top:10px;">품격위원</div>
+                    <div class="MannerCandidates" v-for="candidate in subCandidates">
+                        <div class="HR-item">
+                            <div style="margin-left:10px;">{{$index + 1}}. {{candidate.studentName}}</div>
+                            <div>{{candidate.vote}}표</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="confetti"></canvas>
+        <!-- Vue.js Script -->
+        <script>
+            new Vue({
+                el: '#candidates',
+
+                data: {
+                    mainCandidates: [],
+                    subCandidates: [],
+                },
+
+                // This is run whenever the page is loaded to make sure we have a current content list
+                created: function () {
+                    // Use the vue-resource $http client to fetch data from the /contents route
+                    // this.$http.get('/api/getCandidateByGroup').then(function (response) {
+                    // 	this.candidates = response.data.items ? response.data.items : []
+                    // })
+                    this.$http.get('/api/getCandidatesByGroupAndField?field=1').then(function (response) {
+                        this.mainCandidates = response.data ? response.data : []
+                    })
+                    this.$http.get('/api/getCandidatesByGroupAndField?field=2').then(function (response) {
+                        this.subCandidates = response.data ? response.data : []
+                    })
+                },
+            })
+        </script>
+        <script src="/assets/js/celebrate.js"></script>
+        <script src="/assets/js/query.js"></script>
+</body>
+
+</html>
+
+[[end]]

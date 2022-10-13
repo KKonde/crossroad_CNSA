@@ -1,0 +1,105 @@
+.wrapper{
+    margin-top: 20px;
+  }
+  button:focus{
+    outline: none;
+  }
+  
+  .box1{
+    position: relative;
+    float: left;
+    width: 270px;
+    height: 780px;
+    background: #F1F9FF;
+    text-align: center;
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .box2{
+    position: relative;
+    float: left;
+    width: 1490px;
+    height: 780px;
+  
+  }
+  
+  .box1 p{
+    margin-left: 0;
+  }
+  p{
+    color: #2699FB;
+    font-size: 21px;
+    margin-left: 20px;
+  }
+  
+  .box1 button{
+    color: white;
+    width: 220px;
+    height: 62px;
+    font-size: 20px;
+    padding-top: 0;
+    border: 2px solid #2699FB;
+    background: #F1F9FF;
+    color: #2699FB;
+    transition: all .2s ease-in-out;
+    border-radius: 4px;
+  }
+  
+  .deleteGrpBtn{
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  .changePWBtn{
+    margin-bottom: 30px;
+  }
+  
+  .box1 button:hover, .box2 button:hover{
+    color: #F1F9FF;
+    background: #2699FB;
+    cursor: pointer;
+  }
+  
+  .current-wrapper, .apply-wrapper{
+    width: 100%;
+    height: 220px;
+    overflow: scroll;
+    border: 2px solid #2699FB;
+  }
+  
+  .apply-wrapper{
+    height: 400px;
+  }
+  
+  .current-item, .apply-item{
+    display: flex;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .current-item:nth-child(even),
+  .apply-item:nth-child(even){
+    background: #F1F9FF;
+  }
+  
+  .current-item p, .apply-item p{
+    font-size: 20px;
+    margin-left: 0;
+  }
+  
+  .box2 button{
+    width: 200px;
+    height: 50px;
+    border-radius: 4px;
+    border: 2px solid #2699FB;
+    font-size: 20px;
+    background: transparent;
+    color: #2699FB;
+    margin-left: 40px;
+    transition: all .2s ease-in-out;
+  }
+  

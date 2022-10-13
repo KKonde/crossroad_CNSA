@@ -1,0 +1,34 @@
+[[define "adminSignUp"]]
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/register.css">
+    <title></title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form method="POST" action="/admin/api/signUp">
+            <div class="item-box">
+                <div>홈룸</div>
+                <input type="text" class="item" name="groupName">
+            </div>
+            <div class="item-box">
+                <div>비밀번호</div>
+                <input type="password" class="item" name="password">
+            </div>
+            <div class="item-box">
+                <div>비밀번호 확인</div>
+                <input type="password" class="item" name="passwordCheck">
+            </div>
+            <div class="item-box">
+                <input type="submit" class="submitButton" value="회원가입">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+[[end]]

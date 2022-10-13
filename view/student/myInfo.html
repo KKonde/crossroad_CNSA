@@ -1,0 +1,107 @@
+[[define "myInfo"]]
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>갈림길</title>
+  <link rel="stylesheet" href="/assets/css/main2.css" />
+  <link rel="stylesheet" href="/assets/css/candidate.css" />
+
+  <!-- Vue.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.min.js"></script>
+</head>
+
+<body>
+  <div class="nav-header">
+    <a id="a1" href="/candidate/main">HR 대표</a>
+    <a id="a2" href="/candidate/sub">품격위원</a>
+    <a id="a3" href="/applyCandidate">후보자 등록/수정</a>
+    <a id="a4" href="/result">투표결과</a>
+    <a id="a5">[[index . "groupName"]]</a>
+    <a id="a6" class="white-border" href="/myInfo"><img src="/assets/img/silh_white.png" alt=""></a>
+  </div>
+
+  <div class="wrapper">
+    <div class="box1">
+      <p style="margin-top: 40px;">후보자 등록</p>
+      <div class="register">
+        [[index . "applyAccess"]]
+      </div>
+      <p style="margin-top: 60px;">투표</p>
+      <div class="vote">
+        [[index . "voteAccess"]]
+      </div>
+      <button type="button" name="button" class="changePWBtn" onclick="location.href='/changePassword'">
+        비밀번호 변경
+      </button>
+      <button type="button" name="button" class="logoutBtn" onclick="location.href='/api/logout'">로그아웃</button>
+    </div>
+    <div id="groups" class="box2">
+      <p>가입된 소속</p>
+      <div class="current-wrapper">
+        <div class="current-item" v-for="group in myGroups">
+          <p>{{group.groupName}}</p>
+          <p></p>
+          <div class="button-wrapper">
+            <button type="button" name="button" class="goButton"
+              onclick="location.href='/api/moveGroup?groupName={{group.groupName}}'">
+              이동하기
+            </button>
+            <button type="button" name="button" class="exitButton"
+              onclick="location.href='/api/leaveGroup?groupName={{group.groupName}}'">
+              탈퇴하기
+            </button>
+          </div>
+        </div>
+      </div>
+      <p>가입하기</p>
+      <div class="apply-wrapper">
+        <div class="apply-item" v-for="group in groups">
+          <p>{{group.groupName}}</p>
+          <p></p>
+          <div class="button-wrapper">
+            <button type="button" name="button" class="exitButton" style="opacity: 0;" disabled="true">
+              신청하기
+            </button>
+            <button type="button" name="button" class="exitButton"
+              onclick="location.href='/api/joinGroup?groupName={{group.groupName}}'">
+              가입하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/assets/js/query.js"></script>
+  <!-- Vue.js Script -->
+  <script>
+    new Vue({
+      el: '#groups',
+
+      data: {
+        myGroups: [],
+        groups: [],
+      },
+
+      // This is run whenever the page is loaded to make sure we have a current content list
+      created: function () {
+        // Use the vue-resource $http client to fetch data from the /contents route
+        // this.$http.get('/api/getCandidateByGroup').then(function (response) {
+        // 	this.candidates = response.data.items ? response.data.items : []
+        // })
+        this.$http.get('/api/getMyGroups').then(function (response) {
+          this.myGroups = response.data ? response.data : []
+        })
+        this.$http.get('/api/getGroups').then(function (response) {
+          this.groups = response.data ? response.data : []
+        })
+      },
+    })
+  </script>
+</body>
+
+</html>
+
+[[end]]

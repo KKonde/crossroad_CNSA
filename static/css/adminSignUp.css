@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+  }
+  body{
+      padding:15px;
+  }
+  
+  .wrapper{
+    width:100%;
+    height:880px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size:20px;
+    color:#2699FB;
+    background-color:#F1F9FF;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+  }
+  
+  .item-box{
+    width:670px;
+    margin-top:60px;
+  }
+  
+  .item-box > div{
+    margin-bottom: 7px;
+    padding-left: 5px;
+  }
+  
+  .item{
+    width:670px;
+    height: 83px;
+    background: #F1F9FF;
+    border: 2px solid #2699FB;
+    border-radius: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color:#2699FB;
+    padding-left: 30px;
+  }
+  
+  .submitButton{
+    width:200px;
+    height: 70px;
+    background: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    color:#2699FB;
+    border-radius: 20px;
+    border:#2699FB 2px solid;
+    margin-left: calc(50% - 100px);
+  }
+  
+  input:focus{
+    outline: none;
+  }
+  

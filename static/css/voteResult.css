@@ -1,0 +1,171 @@
+.pie {
+    /* Basic layout */
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+  
+    /* A little styling */
+    border: .15em solid #fff;
+    box-shadow: 0 .075em .2em .05em rgba(0,0,0,.25);
+  
+    /* fixes a minor clipping issue in Chrome */
+    background-origin: border-box;
+    margin-left: 77px;
+  }
+  .pie {
+    background-image: conic-gradient(
+      #d44 calc(3.6deg * var(--segment1, 100)),
+      #fc3 0 calc(3.6deg * var(--segment2, 100)),
+      #ac0 0 calc(3.6deg * var(--segment3, 100)),
+      #0ac 0 calc(3.6deg * var(--segment4, 100)),
+      #f7b 0
+    );
+  }
+  @media (max-width:1920px) and (min-width:1000px){
+    
+  .wrapper{
+    margin-top: 20px;
+    width: 100%;
+    height: 750px;
+    background: #F1F9FF;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .box1, .box2{
+    width: 720px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #2699FB;
+    align-items: center;
+  }
+  
+  .box1{
+    margin-right: -150px;
+  }
+  .box2{
+    margin-left: -150px;
+  }
+  
+  .box1 p, .box2 p{
+    font-size: 40px;
+    width: 100%;
+  }
+  
+  .first, .second{
+    display:inline-block;
+    width: 320px;
+    height: 550px;
+    background: white;
+    margin: 10px;
+  
+  }
+  
+  .result{
+    width: 320px;
+    height: 550px;
+    border: 4px solid #2699FB;
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 15px;
+  }
+  
+  .HR-item{
+    width: 100%;
+    height: 35px;
+    font-size: 25px;
+  }
+  
+  .HR-item div{
+    display: inline-block;
+  }
+  
+  .item1 .first, .item1 .second{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+  }
+  }
+
+
+  @media (max-width:980px){
+    
+  .wrapper{
+    width: 100%;
+    height: 1400px;
+    background: #F1F9FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .box1, .box2{
+    width: 720px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #2699FB;
+    align-items: center;
+    
+  }
+  
+  .box1 p, .box2 p{
+    font-size: 40px;
+    width: 100%;
+  }
+  .box1{
+    margin-top:-130px;
+  }
+
+  .box2{
+    margin-top:150px;
+  }
+  
+  .first, .second{
+    display:inline-block;
+    width: 320px;
+    height: 550px;
+    background: white;
+    margin: 10px;
+  }
+  
+  .result{
+    width: 680px;
+    height: 350px;
+    border: 4px solid #2699FB;
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 15px;
+    display:flex;
+    align-self: center;
+  }
+  
+  .HR-item{
+    height: 35px;
+    font-size: 25px;
+    display: flex;
+  }
+
+  .HR-item > div{
+    margin-right: 80px;
+  }
+  
+  .flex-item1, .flex-item2{
+    display: flex;
+    flex-direction: column;
+    width: 1400px;
+  }
+
+  
+  .item1 .first, .item1 .second{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+  }
+  }

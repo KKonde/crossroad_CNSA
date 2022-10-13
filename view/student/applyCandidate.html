@@ -1,0 +1,63 @@
+[[define "applyCandidate"]]
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>갈림길</title>
+  <link rel="stylesheet" href="/assets/css/applyCandidate.css">
+  <link rel="stylesheet" href="/assets/css/main2.css">
+</head>
+
+<body>
+  <form method="POST" action="/api/applyCandidate" enctype="multipart/form-data">
+
+    <div class="nav-header">
+      <a id="a1" href="/candidate/main">HR 대표</a>
+      <a id="a2" href="/candidate/sub">품격위원</a>
+      <a id="a3" class="white-border" href="/applyCandidate">후보자 등록/수정</a>
+      <a id="a4" href="/result">투표결과</a>
+      <a id="a5">[[index . "groupName"]]</a>
+      <a id="a6" href="/myInfo"><img src="/assets/img/silh_white.png" alt=""></a>
+    </div>
+    <div class="wrapper">
+      <div class="item-box1">
+        <div class="name">
+          이름 : [[index . "studentName"]]
+        </div>
+        <div class="img">
+          <img src="/assets/img/silh_blue.png" alt="" id="check" style="width: 100%;height: auto;">
+        </div>
+        <div class="button-wrapper">
+          <div class="deleteBtn">사진 삭제하기</div>
+          <label for="addBtn" class="addBtn" name="face" accept="image/png, image/jpeg">사진 추가하기</label>
+          <input type="file" name="face" id="addBtn" style="display:none;">
+        </div>
+      </div>
+      <div class=" item-box2">
+        <div class="field-text">
+          분야
+        </div>
+        <select class="field" name="field">
+          <option value="0">분야 (미설정시 내용 저장이 안되니 주의하시길 바랍니다.)</option>
+          <option value="1">HR 대표</option>
+          <option value="2">품격위원</option>
+        </select>
+        <div class="oneIntro-text">
+          한줄소개
+        </div>
+        <input type="text" name="oneLine" value="" placeholder="~~하는 반장이 되겠습니다" class="oneIntro">
+        <div class="Commitment-text">
+          공약
+        </div>
+        <textarea class="Commitment" name="pledge" placeholder="제가 반장이 된다면..." rows="8" cols="80"></textarea>
+        <button type="submit" class="submitBtn">등록하기</button>
+      </div>
+    </div>
+  </form>
+  <script src="/assets/js/apply.js"></script>
+  <script src="/assets/js/query.js"></script>
+</body>
+
+</html>
+[[end]]

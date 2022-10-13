@@ -1,0 +1,123 @@
+[[define "main"]]
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>갈림길</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/assets/css/carousel.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="nav-header">
+    <a id="a1" class="white-border" href="/candidate/main">HR 대표</a>
+    <a id="a2" href="/candidate/sub">품격위원</a>
+    <a id="a3" href="/applyCandidate">후보자 등록/수정</a>
+    <a id="a4" href="/result">투표결과</a>
+    <a id="a5">[[index . "groupName"]]</a>
+    <a id="a6" href="/myInfo"><img src="/assets/img/silh_white.png" alt=""></a>
+  </div>
+
+  <div class="gallery">
+    <button class="previousBtn"></button>
+    <div class="gallery-container">
+      <div class="gallery-item">
+        <div class="flex-item1">
+          <img style="width:100%;height:auto;" src=[[index . "img4" ]]></img>
+        </div>
+        <div class="flex-item2">[[index . "name4"]]</div>
+        <div class="flex-item3">HR대표 후보</div>
+        <div class="flex-item4">[[index . "oneLine4"]]</div>
+        <button class="flex-item5">자세히 보기</button>
+        <div class="div1">[[index . "name4"]]</div>
+        <div class="div2">HR대표후보</div>
+        <hr class="Line">
+        </hr>
+        <div class="div3">[[index . "oneLine4"]]</div>
+        <div class="div4">[[index . "pledge4"]]</div>
+        <div class="xButton">x</div>
+        <button class="voteButton" onclick=voteCheck1([[index . "studentNumber4" ]])>투표하기</button>
+      </div>
+      <div class="gallery-item">
+        <div class="flex-item1">
+          <img style="width:100%;height:auto;" src=[[index . "img2" ]]></img>
+        </div>
+        <div class="flex-item2">[[index . "name2"]]</div>
+        <div class="flex-item3">HR대표 후보</div>
+        <div class="flex-item4">[[index . "oneLine2"]]</div>
+        <button class="flex-item5">자세히 보기</button>
+        <div class="div1">[[index . "name2"]]</div>
+        <div class="div2">HR대표후보</div>
+        <hr class="Line">
+        </hr>
+        <div class="div3">[[index . "oneLine2"]]</div>
+        <div class="div4">[[index . "pledge2"]]</div>
+        <div class="xButton">x</div>
+        <button class="voteButton" onclick=voteCheck1([[index . "studentNumber2" ]])>투표하기</button>
+      </div>
+      <div class="gallery-item">
+        <div class="flex-item1">
+          <img style="width:100%;height:auto;" src=[[index . "img1" ]]></img>
+        </div>
+        <div class="flex-item2">[[index . "name1"]]</div>
+        <div class="flex-item3">HR대표 후보</div>
+        <div class="flex-item4">[[index . "oneLine1"]]</div>
+        <button class="flex-item5">자세히 보기</button>
+        <div class="div1">[[index . "name1"]]</div>
+        <div class="div2">HR대표후보</div>
+        <hr class="Line">
+        </hr>
+        <div class="div3">[[index . "oneLine1"]]</div>
+        <div class="div4">[[index . "pledge1"]]</div>
+        <div class="xButton">x</div>
+        <button class="voteButton" onclick=voteCheck1([[index . "studentNumber1" ]])>투표하기</button>
+      </div>
+      <div class="gallery-item">
+        <div class="flex-item1">
+          <img style="width:100%;height:auto;" src=[[index . "img3" ]]></img>
+        </div>
+        <div class="flex-item2">[[index . "name3"]]</div>
+        <div class="flex-item3">HR대표 후보</div>
+        <div class="flex-item4">[[index . "oneLine3"]]</div>
+        <button class="flex-item5">자세히 보기</button>
+        <div class="div1">[[index . "name3"]]</div>
+        <div class="div2">HR대표후보</div>
+        <hr class="Line">
+        </hr>
+        <div class="div3">[[index . "oneLine3"]]</div>
+        <div class="div4">[[index . "pledge3"]]</div>
+        <div class="xButton">x</div>
+        <button class="voteButton" onclick=voteCheck1([[index . "studentNumber3" ]])>투표하기</button>
+      </div>
+      <div class="gallery-item">
+        <div class="flex-item1">
+          <img style="width:100%;height:auto;" src=[[index . "img5" ]]></img>
+        </div>
+        <div class="flex-item2">[[index . "name5"]]</div>
+        <div class="flex-item3">HR대표 후보</div>
+        <div class="flex-item4">[[index . "oneLine5"]]</div>
+        <button class="flex-item5">자세히 보기</button>
+        <div class="div1">[[index . "name5"]]</div>
+        <div class="div2">HR대표후보</div>
+        <hr class="Line">
+        </hr>
+        <div class="div3">[[index . "oneLine5"]]</div>
+        <div class="div4">[[index . "pledge5"]]</div>
+        <div class="xButton">x</div>
+        <button class="voteButton" onclick=voteCheck1([[index . "studentNumber5" ]])>투표하기</button>
+      </div>
+    </div>
+    <button class="nextBtn"></button>
+    <div class="gallery-controls" style="display:none;"></div>
+  </div>
+  <script src="/assets/js/carousel.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/query.js"></script>
+</body>
+
+</html>
+[[end]]
